@@ -59,11 +59,7 @@ t_map	*map_init(int argc, char const *argv[])
 	strs = read_map_file(argv[1]);
 	map = malloc(sizeof(t_map));
 	if (!map)
-	{
-		ft_free_strs(strs);
-		perror("Error\n");
-		exit(1);
-	}
+		malloc_error(strs, ME_MODE_STRS);
 	map->strs = strs;
 	map->height = ft_count_line_fd(argv[1]);
 	map->width = ft_strlen(strs[0]);

@@ -33,7 +33,7 @@ static char	**ft_strsdup(char **strs)
 	return (result);
 }
 
-t_pos	find_pos(t_map map, char find)
+t_pos	find_pos(char **strs, char find)
 {
 	t_pos	player_pos;
 	size_t	x;
@@ -41,12 +41,12 @@ t_pos	find_pos(t_map map, char find)
 
 	x = 0;
 	y = 0;
-	while (map.strs[y])
+	while (strs[y])
 	{
 		x = 0;
-		while (map.strs[y][x])
+		while (strs[y][x])
 		{
-			if (map.strs[y][x] == find)
+			if (strs[y][x] == find)
 			{
 				player_pos.x = x;
 				player_pos.y = y;
@@ -82,7 +82,7 @@ static t_map	to_flood_fill(t_map map)
 	t_map	temp_map;
 	t_pos	player_pos;
 
-	player_pos = find_pos(map, PLAYER);
+	player_pos = find_pos(map.strs, PLAYER);
 	temp_map.count_c = 0;
 	temp_map.count_e = 0;
 	temp_map.count_p = 0;
