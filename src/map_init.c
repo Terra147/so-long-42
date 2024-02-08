@@ -53,7 +53,7 @@ t_map	*map_init(int argc, char const *argv[])
 
 	if (argc != 2)
 	{
-		ft_putstr_fd("ERROR\n: Please add only one argumant.\n", 1);
+		ft_putstr_fd("Error\n: Please add only one argumant.\n", 2);
 		exit(1);
 	}
 	strs = read_map_file(argv[1]);
