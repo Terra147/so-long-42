@@ -35,9 +35,10 @@
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 
-# define M_MALLOC_ERROR "ERROR\n: malloc error.\n"
-# define M_OPEN_FILE_E "ERROR\n: can't open image file.\n"
+# define M_MALLOC_ERROR "Error\n: malloc error.\n"
+# define M_OPEN_FILE_E "Error\n: can't open image file.\n"
 
+# define ME_NOT_FREE -1
 # define ME_MODE_MLX 0
 # define ME_MODE_ASSETS 1
 # define ME_MODE_S_MAP 2

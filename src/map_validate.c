@@ -36,17 +36,17 @@ static int	count_check(t_map map)
 {
 	if (map.count_c < 1)
 	{
-		ft_putstr_fd("ERROR\n: Collectible less than 1 in map.\n", 2);
+		ft_putstr_fd("Error\n: Collectible less than 1 in map.\n", 2);
 		return (0);
 	}
 	if (map.count_e != 1)
 	{
-		ft_putstr_fd("ERROR\n: Exit position is not 1 in map.\n", 2);
+		ft_putstr_fd("Error\n: Exit position is not 1 in map.\n", 2);
 		return (0);
 	}
 	if (map.count_p != 1)
 	{
-		ft_putstr_fd("ERROR\n: Starting position is not 1 in map.\n", 2);
+		ft_putstr_fd("Error\n: Starting position is not 1 in map.\n", 2);
 		return (0);
 	}
 	return (1);
@@ -63,7 +63,7 @@ static int	check_wall(t_map map)
 	{
 		if (map.strs[0][i] != '1' || map.strs[map.height - 1][i] != '1')
 		{
-			ft_putstr_fd("ERROR\n: Map is not closed by wall.\n", 2);
+			ft_putstr_fd("Error\n: Map is not closed by wall.\n", 2);
 			return (0);
 		}
 		i++;
@@ -73,7 +73,7 @@ static int	check_wall(t_map map)
 	{
 		if (map.strs[i][0] != '1' || map.strs[i][last] != '1')
 		{
-			ft_putstr_fd("ERROR\n: Map is not closed by wall.\n", 2);
+			ft_putstr_fd("Error\n: Map is not closed by wall.\n", 2);
 			return (0);
 		}
 		i++;
@@ -92,7 +92,7 @@ static int	check_only_chr(char **strs)
 		str = ft_strtrim(strs[i], "01ECP");
 		if (ft_strncmp(str, "", ft_strlen(str)))
 		{
-			ft_putstr_fd("ERROR\n: Map is only \"0,1,E,C,P\" Character.\n", 2);
+			ft_putstr_fd("Error\n: Map is only \"0,1,E,C,P\" Character.\n", 2);
 			free(str);
 			return (0);
 		}

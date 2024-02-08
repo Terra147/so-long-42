@@ -57,6 +57,8 @@ t_map	*map_init(int argc, char const *argv[])
 		exit(1);
 	}
 	strs = read_map_file(argv[1]);
+	if (strs == NULL)
+		print_error(strs, ME_NOT_FREE, M_MALLOC_ERROR);
 	map = malloc(sizeof(t_map));
 	if (!map)
 		print_error(strs, ME_MODE_STRS, M_MALLOC_ERROR);
