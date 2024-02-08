@@ -25,7 +25,7 @@ static int	check_rectangle(t_map map)
 		rectangle = ft_strlen(map.strs[i++]) * map.height;
 		if (rectangle != strs_len)
 		{
-			ft_putstr_fd("ERROR\n: Map is not rectangle.\n", 2);
+			ft_putstr_fd("Error\n: Map is not rectangle.\n", 2);
 			return (0);
 		}
 	}
