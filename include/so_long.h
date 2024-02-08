@@ -37,6 +37,7 @@
 
 # define M_MALLOC_ERROR "Error\n: malloc error.\n"
 # define M_OPEN_FILE_E "Error\n: can't open image file.\n"
+# define M_CLOSE_WIN "Closing the window and quitting the program.\n"
 
 # define ME_NOT_FREE -1
 # define ME_MODE_MLX 0

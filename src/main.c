@@ -51,7 +51,7 @@ static int	key_move(int keycode, t_mlx *data)
 	if (keycode == KEY_ESC)
 	{
 		free_mlx(data);
-		ft_printf("Close\n");
+		ft_printf(M_CLOSE_WIN);
 		exit(0);
 	}
 	else if (keycode == KEY_A)
@@ -65,6 +65,13 @@ static int	key_move(int keycode, t_mlx *data)
 	return (0);
 }
 
+static int	close_window(t_mlx *data)
+{
+	ft_printf(M_CLOSE_WIN);
+	free_mlx(data);
+	exit(0);
+}
+
 int	main(int argc, char const *argv[])
 {
 	t_mlx	*game;
@@ -73,6 +80,7 @@ int	main(int argc, char const *argv[])
 	ft_printf("Ready\n");
 	draw_map(game);
 	mlx_key_hook(game->mlx_win, key_move, game);
+	mlx_hook(game->mlx_win, DestroyNotify, 0, close_window, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
