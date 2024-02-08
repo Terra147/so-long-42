@@ -6,7 +6,7 @@
 /*   By: awadeng <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 12:50:44 by awadeng           #+#    #+#             */
-/*   Updated: 2024/02/08 11:45:40 by awadeng          ###   ########.fr       */
+/*   Updated: 2024/02/08 22:31:56 by awadeng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	free_map(t_map *data)
 {
-	ft_printf("free map\n");
 	if (!data)
 		return ;
 	ft_free_strs(data->strs);
@@ -23,7 +22,6 @@ void	free_map(t_map *data)
 
 void	free_map_status(t_map_status *data)
 {
-	ft_printf("free map status\n");
 	if (!data)
 		return ;
 	if (data->map != NULL)
@@ -33,7 +31,6 @@ void	free_map_status(t_map_status *data)
 
 void	free_assets(t_mlx *mlx)
 {
-	ft_printf("free assets\n");
 	if (!mlx || !mlx->assets)
 		return ;
 	if (mlx->assets->img_bg != NULL)
@@ -52,7 +49,6 @@ void	free_assets(t_mlx *mlx)
 
 void	free_mlx(t_mlx *data)
 {
-	ft_printf("free mlx\n");
 	if (!data)
 		return ;
 	if (data->map != NULL)

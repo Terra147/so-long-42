@@ -51,6 +51,7 @@ static int	key_move(int keycode, t_mlx *data)
 	if (keycode == KEY_ESC)
 	{
 		free_mlx(data);
+		ft_printf("Close\n");
 		exit(0);
 	}
 	else if (keycode == KEY_A)
