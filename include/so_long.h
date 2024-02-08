@@ -48,11 +48,11 @@
 # define IMG_H 40
 # define IMG_W 40
 
-# define PART_WALL "assets/wall.xpm"
-# define PART_PLAYER "assets/player.xpm"
-# define PART_C "assets/fish.xpm"
-# define PART_EXIT "assets/exit.xpm"
-# define PART_BG "assets/bg.xpm"
+# define PART_WALL "textures/wall.xpm"
+# define PART_PLAYER "textures/player.xpm"
+# define PART_C "textures/fish.xpm"
+# define PART_EXIT "textures/exit.xpm"
+# define PART_BG "textures/bg.xpm"
 
 typedef struct s_c_fill
 {
