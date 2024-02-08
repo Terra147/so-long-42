@@ -104,8 +104,6 @@ static int	check_only_chr(char **strs)
 
 void	map_validate(t_map *map)
 {
-	int	i;
-
 	if (!check_rectangle(*map) || !count_check(*map)
 		|| !check_only_chr(map->strs) || !check_wall(*map)
 		|| !check_flood_fill(*map))

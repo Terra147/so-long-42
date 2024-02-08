@@ -36,8 +36,8 @@ static char	**ft_strsdup(char **strs)
 t_pos	find_pos(char **strs, char find)
 {
 	t_pos	player_pos;
-	size_t	x;
-	size_t	y;
+	int		x;
+	int		y;
 
 	x = 0;
 	y = 0;
@@ -56,6 +56,8 @@ t_pos	find_pos(char **strs, char find)
 		}
 		y++;
 	}
+	player_pos.x = -1;
+	player_pos.y = -1;
 	return (player_pos);
 }
 

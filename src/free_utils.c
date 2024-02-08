@@ -6,7 +6,7 @@
 /*   By: awadeng <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 12:50:44 by awadeng           #+#    #+#             */
-/*   Updated: 2024/02/07 11:04:49 by awadeng          ###   ########.fr       */
+/*   Updated: 2024/02/08 11:45:40 by awadeng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	free_map(t_map *data)
 {
+	ft_printf("free map\n");
 	if (!data)
 		return ;
 	ft_free_strs(data->strs);
@@ -22,6 +23,7 @@ void	free_map(t_map *data)
 
 void	free_map_status(t_map_status *data)
 {
+	ft_printf("free map status\n");
 	if (!data)
 		return ;
 	if (data->map != NULL)
@@ -31,31 +33,26 @@ void	free_map_status(t_map_status *data)
 
 void	free_assets(t_mlx *mlx)
 {
-	if (!mlx)
+	ft_printf("free assets\n");
+	if (!mlx || !mlx->assets)
 		return ;
 	if (mlx->assets->img_bg != NULL)
 		mlx_destroy_image(mlx->mlx, mlx->assets->img_bg);
 	if (mlx->assets->img_w != NULL)
-	{
 		mlx_destroy_image(mlx->mlx, mlx->assets->img_w);
-	}
 	if (mlx->assets->img_p != NULL)
-	{
 		mlx_destroy_image(mlx->mlx, mlx->assets->img_p);
-	}
 	if (mlx->assets->img_c != NULL)
-	{
 		mlx_destroy_image(mlx->mlx, mlx->assets->img_c);
-	}
 	if (mlx->assets->img_exit != NULL)
-	{
 		mlx_destroy_image(mlx->mlx, mlx->assets->img_exit);
-	}
 	free(mlx->assets);
+	mlx->assets = NULL;
 }
 
 void	free_mlx(t_mlx *data)
 {
+	ft_printf("free mlx\n");
 	if (!data)
 		return ;
 	if (data->map != NULL)
@@ -70,11 +67,12 @@ void	free_mlx(t_mlx *data)
 	{
 		mlx_destroy_display(data->mlx);
 		free(data->mlx);
+		data->mlx = NULL;
 	}
 	free(data);
 }
 
-void	malloc_error(void *data, int mode)
+void	print_error(void *data, int mode, char *message)
 {
 	if (mode == 0)
 		free_mlx(data);
@@ -86,6 +84,6 @@ void	malloc_error(void *data, int mode)
 		free_map(data);
 	else if (mode == 4)
 		ft_free_strs(data);
-	ft_putstr_fd("ERROR\n: malloc error.\n", 2);
+	ft_putstr_fd(message, 2);
 	exit(1);
 }

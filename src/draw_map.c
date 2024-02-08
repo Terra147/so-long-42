@@ -6,7 +6,7 @@
 /*   By: awadeng <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:28:27 by awadeng           #+#    #+#             */
-/*   Updated: 2024/02/07 15:50:13 by awadeng          ###   ########.fr       */
+/*   Updated: 2024/02/08 12:15:32 by awadeng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ static void	draw(t_mlx *mlx, t_img *img, int x, int y)
 
 void	draw_map(t_mlx *game)
 {
-	int	y;
-	int	x;
+	int		y;
+	int		x;
 	char	**map;
 
 	map = game->map->map->strs;
@@ -46,16 +46,18 @@ void	draw_map(t_mlx *game)
 		x = 0;
 		while (map[y][x])
 		{
-			draw(game, game->assets->img_bg, x * IMG_WIDTH, y * IMG_HEIGHT);
+			draw(game, game->assets->img_bg, x * IMG_W, y * IMG_H);
 			if (map[y][x] == '1')
-				draw(game, game->assets->img_w, x * IMG_WIDTH, y * IMG_HEIGHT);
+				draw(game, game->assets->img_w, x * IMG_W, y * IMG_H);
 			else if (map[y][x] == 'C')
-				draw(game, game->assets->img_c, x * IMG_WIDTH, y * IMG_HEIGHT);
+				draw(game, game->assets->img_c, x * IMG_W, y * IMG_H);
 			x++;
 		}
 		y++;
 	}
-	draw(game, game->assets->img_exit, game->map->exit_pos.x * IMG_WIDTH, game->map->exit_pos.y * IMG_HEIGHT);
-	draw(game, game->assets->img_p, game->map->player_pos.x * IMG_WIDTH, game->map->player_pos.y * IMG_HEIGHT);
+	draw(game, game->assets->img_exit,
+		game->map->exit_pos.x * IMG_W, game->map->exit_pos.y * IMG_H);
+	draw(game, game->assets->img_p,
+		game->map->player_pos.x * IMG_W, game->map->player_pos.y * IMG_H);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->mlx_img, 0, 0);
 }

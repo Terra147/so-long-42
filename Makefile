@@ -9,8 +9,8 @@ LIBMLX = -L ./mlx_linux -lmlx -lXext -lX11 -lm -lbsd
 HEADER = include
 FT_HEADER = ./libft/include
 
-CC = gcc -g #-fsanitize=address
-CFLAGS = -I $(FT_HEADER) -I $(HEADER) -I ./mlx_linux #-Wall -Werror -Wextra
+CC = gcc -g
+CFLAGS = -I $(FT_HEADER) -I $(HEADER) -I ./mlx_linux -Wall -Werror -Wextra
 OBJ_DIR = .object/
 
 SRC = $(SRC_DIR)main.c $(SRC_DIR)map_validate.c $(SRC_DIR)map_init.c $(SRC_DIR)game_start.c $(SRC_DIR)ft_flood_fill.c $(SRC_DIR)free_utils.c $(SRC_DIR)draw_map.c \
