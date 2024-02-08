@@ -77,7 +77,6 @@ int	main(int argc, char const *argv[])
 	t_mlx	*game;
 
 	game = start(argc, argv);
-	ft_printf("Ready\n");
 	draw_map(game);
 	mlx_key_hook(game->mlx_win, key_move, game);
 	mlx_hook(game->mlx_win, DestroyNotify, 0, close_window, game);

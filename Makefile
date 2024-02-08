@@ -9,7 +9,7 @@ LIBMLX = -L ./mlx_linux -lmlx -lXext -lX11 -lm -lbsd
 HEADER = include
 FT_HEADER = ./libft/include
 
-CC = gcc -g
+CC = gcc
 CFLAGS = -I $(FT_HEADER) -I $(HEADER) -I ./mlx_linux -Wall -Werror -Wextra
 OBJ_DIR = .object/
 

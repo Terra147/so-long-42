@@ -101,12 +101,11 @@ int	check_flood_fill(t_map map)
 
 	temp_map = to_flood_fill(map);
 	if (temp_map.count_c != map.count_c)
-		ft_putstr_fd("ERROR\n: Player can't find Collectible.\n", 2);
+		ft_putstr_fd("Error\n: Player can't find Collectible.\n", 2);
 	else if (temp_map.count_e != map.count_e)
-		ft_putstr_fd("ERROR\n: Player can't find Exit.\n", 2);
+		ft_putstr_fd("Error\n: Player can't find Exit.\n", 2);
 	else
 	{
-		ft_putstr_fd("Flood fill checked.\n", 1);
 		ft_free_strs(temp_map.strs);
 		return (1);
 	}

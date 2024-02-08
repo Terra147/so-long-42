@@ -112,5 +112,4 @@ void	map_validate(t_map *map)
 		free(map);
 		exit(1);
 	}
-	ft_putstr_fd("Map is OK.\n", 1);
 }
