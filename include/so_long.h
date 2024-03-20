@@ -46,8 +46,8 @@
 # define ME_MODE_MAP 3
 # define ME_MODE_STRS 4
 
-# define IMG_H 40
-# define IMG_W 40
+# define IMG_H 120
+# define IMG_W 120
 
 # define PART_WALL "textures/wall.xpm"
 # define PART_PLAYER "textures/player.xpm"

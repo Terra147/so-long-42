@@ -6,7 +6,7 @@
 /*   By: awadeng <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:28:27 by awadeng           #+#    #+#             */
-/*   Updated: 2024/02/08 12:15:32 by awadeng          ###   ########.fr       */
+/*   Updated: 2024/03/20 10:04:28 by awadeng          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	draw(t_mlx *mlx, t_img *img, int x, int y)
 	int				j;
 
 	j = 0;
-	while (j < 40)
+	while (j < IMG_H)
 	{
 		i = 0;
-		while (i < 40)
+		while (i < IMG_W)
 		{
 			color = mlx_get_pixel(img, i, j);
 			if (color != mlx_rgb_to_int(0, 255, 255, 255))

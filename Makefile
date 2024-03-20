@@ -2,8 +2,6 @@ NAME = so_long
 
 LIBFT = libft/libft.a
 
-MLX	= mlx/Makefile.gen
-
 LIBMLX = -L ./mlx_linux -lmlx -lXext -lX11 -lm -lbsd
 
 HEADER = include
